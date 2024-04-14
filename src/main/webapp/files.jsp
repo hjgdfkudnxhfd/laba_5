@@ -41,7 +41,7 @@
 
 <h1>Файлы в каталоге: <%= request.getSession().getAttribute("path") %></h1>
 
-<p><a  href=<%="files?path=" + parentDirectoryPath.replace("\\","/")%>/>Вверх</p></a>
+<p><a href="<%= "files?path=" + parentDirectoryPath.replace("\\", "/") %>">Вверх</a></p>
 
 
 
