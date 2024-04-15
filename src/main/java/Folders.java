@@ -12,7 +12,7 @@ import java.util.Enumeration;
 public class Folders extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String login = (String) request.getSession().getAttribute("login");
+        String login = (String) request.getSession().getAttribute("login"); //получаем аттрибут
         String password = (String) request.getSession().getAttribute("password");
         String path = (String) request.getSession().getAttribute("path");
         String pathParameter = request.getParameter("path");
@@ -31,7 +31,7 @@ public class Folders extends HttpServlet {
         {
             path = "C:\\Users\\val_4\\Desktop\\abs\\" + login;
         }
-        request.getSession().setAttribute("path", path);
+        request.getSession().setAttribute("path", path);//перезаписали атрибут в сессию
         request.getSession().setAttribute("login", login);
 
         File directory = new File(path); //папки
@@ -46,7 +46,7 @@ public class Folders extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getSession().removeAttribute("login");
+        request.getSession().removeAttribute("login");//удалить аттрибут
         request.getSession().removeAttribute("path");
 
         String url = request.getRequestURL().toString();

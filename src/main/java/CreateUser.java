@@ -23,7 +23,7 @@ public class CreateUser extends HttpServlet {
         String password = request.getParameter("password");
 
         AccountUser profile = new AccountUser(login, password, email);
-        if (AccountService.getUserByLogin(login) == null) { //проверяем существует ли такой логин
+        if (AccountService.getUserByLogin(login) == null) { //проверяем, что логин не существует
             AccountService.addNewUser(profile);
 
             request.getSession().setAttribute("login", login);

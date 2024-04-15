@@ -8,7 +8,7 @@
     String directory = (String) request.getSession().getAttribute("path");
     String login = (String) request.getSession().getAttribute("login");
     File file = new File(directory);
-    String parentDirectoryPath = "C:\\Users\\val_4\\Desktop\\abs";
+    String parentDirectoryPath = "C:\\Users\\val_4\\Desktop\\abs"; //для наглядности
     parentDirectoryPath = file.getParent();
 %>
 
@@ -73,6 +73,7 @@
         <th><%= new Date(item.lastModified())%></th>
     </tr>
     <% } %>
+</table>
 </table>
 
 </body>
